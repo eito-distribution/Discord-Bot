@@ -15,8 +15,7 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 @bot.hybrid_command(name="tenki", description="福岡県の天気予報を表示します")  #nameにBotを動かしたいコマンドを入力します。 descriptionにはコマンドの説明を入力できるコードです。
 async def weather(ctx):
     # 気象庁の天気予報Webデータ(API)を持ってくるコードです。
-    # 福岡県のエリアコードは 400000 です:contentReference[oaicite:0]{index=0}。
-    url = "ここは調べて入力しよう！"
+    url = "ここは調べて入力しよう！"        　#ここに調べた気象庁のWebデータのURLを入力するコードです。
     response = requests.get(url)        # APIに天気のデータを送ってもらうコードです。
     data = response.json()             # 帰ってきたファイル(JSONファイル)をPythonの時点型に変換するコードです。
     # 送ってもらったファイルの、data[0]["timeSeries"][0]["areas"][0]["weathers"][0] という部分に今日の天気が入っているのでその部分を読み込むコードです。
